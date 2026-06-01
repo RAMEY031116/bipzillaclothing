@@ -4,11 +4,11 @@
     "name": "Royal Bloom Hoodie",
     "category": "Hoodie",
     "price": 64.99,
-    "colour": "Washed Black",
+    "colour": "Black",
     "fit": "Heavy oversized fit",
-    "print_type": "Printed",
-    "finish": "Large back print on heavyweight hoodie",
-    "image": "assets/mockups/royal_bloom_hoodie.jpg",
+    "print_type": "Large Back Print",
+    "finish": "DTG-style print on heavyweight cotton fleece",
+    "image": "assets/products/royal_bloom_hoodie.jpg",
     "art": "assets/art/card_white.jpg",
     "stock": 18,
     "sizes": [
@@ -17,19 +17,19 @@
       "L",
       "XL"
     ],
-    "description": "A black hoodie with the BIPZILLA playing-card artwork printed on the back. This is the hero piece for the first drop."
+    "description": "The hero BIPZILLA piece: a black heavyweight hoodie with the playing-card artwork printed large across the back. Built to feel like a proper streetwear drop."
   },
   {
-    "id": "samurai-mask-tee",
-    "name": "Samurai Mask Tee",
+    "id": "royal-bloom-tee",
+    "name": "Royal Bloom Tee",
     "category": "T-Shirt",
-    "price": 36.99,
+    "price": 34.99,
     "colour": "Vintage White",
     "fit": "Relaxed boxy fit",
-    "print_type": "Printed",
-    "finish": "Full front DTG-style art print",
-    "image": "assets/mockups/samurai_mask_tee.jpg",
-    "art": "assets/art/samurai.jpg",
+    "print_type": "Front Print",
+    "finish": "Soft hand-feel artwork print",
+    "image": "assets/products/royal_bloom_tee.jpg",
+    "art": "assets/art/card_white.jpg",
     "stock": 24,
     "sizes": [
       "S",
@@ -37,7 +37,27 @@
       "L",
       "XL"
     ],
-    "description": "A clean tee built around the colourful samurai illustration. Loud artwork, simple garment."
+    "description": "A clean tee version of the Royal Bloom card artwork. Minimal garment, bold centre print, easy to wear."
+  },
+  {
+    "id": "samurai-mask-tee",
+    "name": "Samurai Mask Tee",
+    "category": "T-Shirt",
+    "price": 36.99,
+    "colour": "Natural White",
+    "fit": "Relaxed streetwear fit",
+    "print_type": "Front Print",
+    "finish": "Full colour artwork print",
+    "image": "assets/products/samurai_mask_tee.jpg",
+    "art": "assets/art/samurai.jpg",
+    "stock": 20,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "description": "The colourful samurai artwork printed on a natural white tee. This is the louder art piece in the first collection."
   },
   {
     "id": "ocean-drift-hoodie",
@@ -46,9 +66,9 @@
     "price": 62.99,
     "colour": "Deep Navy",
     "fit": "Regular heavyweight fit",
-    "print_type": "Printed",
-    "finish": "Front artwork print with soft ink effect",
-    "image": "assets/mockups/ocean_drift_hoodie.jpg",
+    "print_type": "Front Print",
+    "finish": "Large front watercolour print",
+    "image": "assets/products/ocean_drift_hoodie.jpg",
     "art": "assets/art/ocean.jpg",
     "stock": 16,
     "sizes": [
@@ -57,18 +77,38 @@
       "L",
       "XL"
     ],
-    "description": "A deep navy hoodie using the underwater art as the main front print. Works as a statement piece without needing extra graphics."
+    "description": "The underwater illustration becomes a statement hoodie. The navy base keeps it wearable while the art stays expressive."
+  },
+  {
+    "id": "tokyo-nights-hoodie",
+    "name": "Tokyo Nights Hoodie",
+    "category": "Hoodie",
+    "price": 64.99,
+    "colour": "Black / Pink",
+    "fit": "Oversized fit",
+    "print_type": "Back Print",
+    "finish": "Japanese-style back graphic",
+    "image": "assets/products/tokyo_nights_hoodie.jpg",
+    "art": "assets/art/card_black.jpg",
+    "stock": 14,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "description": "A darker hoodie with a vertical Japanese BIPZILLA mark. Good for the brand identity and lookbook shots."
   },
   {
     "id": "pizza-slice-sweatshirt",
     "name": "Pizza Slice Sweatshirt",
     "category": "Sweatshirt",
-    "price": 46.99,
+    "price": 49.99,
     "colour": "Soft Pink",
     "fit": "Relaxed crewneck",
-    "print_type": "Printed",
-    "finish": "Centred front art print",
-    "image": "assets/mockups/pizza_slice_sweatshirt.jpg",
+    "print_type": "Front Print",
+    "finish": "Centred illustrated print",
+    "image": "assets/products/pizza_slice_sweatshirt.jpg",
     "art": "assets/art/pizza.jpg",
     "stock": 20,
     "sizes": [
@@ -77,166 +117,26 @@
       "L",
       "XL"
     ],
-    "description": "A playful everyday sweatshirt with the pizza artwork. Good social-media product because it is fun and easy to understand."
+    "description": "A playful pink crewneck with the pizza illustration. Fun, simple and made for social posts."
   },
   {
-    "id": "abstract-noise-tee",
-    "name": "Abstract Noise Tee",
-    "category": "T-Shirt",
-    "price": 34.99,
-    "colour": "Black",
-    "fit": "Relaxed fit",
-    "print_type": "Printed",
-    "finish": "Full front abstract artwork print",
-    "image": "assets/mockups/abstract_noise_tee.jpg",
-    "art": "assets/art/abstract.jpg",
-    "stock": 22,
-    "sizes": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "description": "A black tee using the colourful abstract art. This gives the brand a more street/art-gallery side."
-  },
-  {
-    "id": "crofts-road-sweatshirt",
-    "name": "Crofts Road Sweatshirt",
-    "category": "Sweatshirt",
-    "price": 49.99,
-    "colour": "Stone",
-    "fit": "Classic crewneck",
-    "print_type": "Embroidered",
-    "finish": "Small chest patch / embroidery concept",
-    "image": "assets/mockups/crofts_road_sweatshirt.jpg",
-    "art": "assets/art/postbox.jpg",
-    "stock": 14,
-    "sizes": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "description": "A subtle street-sketch inspired sweatshirt. In a real launch this would work best as a small embroidery or woven patch."
-  },
-  {
-    "id": "guitar-crop-tee",
-    "name": "Red Guitar Tee",
-    "category": "T-Shirt",
-    "price": 34.99,
-    "colour": "Cream",
-    "fit": "Relaxed fit",
-    "print_type": "Printed",
-    "finish": "Front artwork print",
-    "image": "assets/mockups/guitar_crop_tee.jpg",
-    "art": "assets/art/guitar.jpg",
-    "stock": 20,
-    "sizes": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "description": "A music-inspired tee using the red guitar artwork. Strong colour, simple product."
-  },
-  {
-    "id": "koi-narayan-hoodie",
-    "name": "Koi Deity Hoodie",
-    "category": "Hoodie",
-    "price": 66.99,
-    "colour": "Natural",
-    "fit": "Premium heavyweight fit",
-    "print_type": "Printed",
-    "finish": "Premium front artwork print",
-    "image": "assets/mockups/koi_narayan_hoodie.jpg",
-    "art": "assets/art/koi_2.jpg",
-    "stock": 10,
-    "sizes": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "description": "A premium art hoodie concept using the deity and koi artwork. Treat this as a limited collector piece."
-  },
-  {
-    "id": "cow-splash-sweatshirt",
-    "name": "Cow Splash Sweatshirt",
+    "id": "bipzilla-logo-crew",
+    "name": "BIPZILLA Logo Crew",
     "category": "Sweatshirt",
     "price": 44.99,
-    "colour": "Heather Grey",
+    "colour": "Black",
     "fit": "Relaxed crewneck",
-    "print_type": "Printed",
-    "finish": "Front sketch print",
-    "image": "assets/mockups/cow_splash_sweatshirt.jpg",
-    "art": "assets/art/cow.jpg",
-    "stock": 18,
-    "sizes": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "description": "A softer everyday piece that keeps the hand-painted feeling. Good for a calmer brand item."
-  },
-  {
-    "id": "bipzilla-logo-hoodie",
-    "name": "BIPZILLA Logo Hoodie",
-    "category": "Hoodie",
-    "price": 59.99,
-    "colour": "Black",
-    "fit": "Oversized fit",
-    "print_type": "Embroidered",
-    "finish": "Chest logo embroidery concept",
-    "image": "assets/mockups/bipzilla_logo_hoodie.jpg",
+    "print_type": "Embroidery Concept",
+    "finish": "Small chest wordmark / embroidery idea",
+    "image": "assets/products/royal_bloom_model.jpg",
     "art": "assets/brand/bipzilla_wordmark.png",
-    "stock": 30,
+    "stock": 12,
     "sizes": [
       "S",
       "M",
       "L",
       "XL"
     ],
-    "description": "A clean logo hoodie for people who want the brand but not a huge artwork print."
-  },
-  {
-    "id": "royal-bloom-tee",
-    "name": "Royal Bloom Tee",
-    "category": "T-Shirt",
-    "price": 34.99,
-    "colour": "Black",
-    "fit": "Relaxed fit",
-    "print_type": "Printed",
-    "finish": "Front card print",
-    "image": "assets/mockups/royal_bloom_tee.jpg",
-    "art": "assets/art/card_white.jpg",
-    "stock": 28,
-    "sizes": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "description": "The card artwork as a black T-shirt. This gives you a simple, sellable entry product."
-  },
-  {
-    "id": "clock-lamp-sweatshirt",
-    "name": "London Clock Sweatshirt",
-    "category": "Sweatshirt",
-    "price": 48.99,
-    "colour": "Warm White",
-    "fit": "Classic crewneck",
-    "print_type": "Printed",
-    "finish": "Front sketch print",
-    "image": "assets/mockups/clock_lamp_sweatshirt.jpg",
-    "art": "assets/art/lamp_clock.jpg",
-    "stock": 15,
-    "sizes": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "description": "A London sketch inspired sweatshirt. Good for local streetwear angle and Instagram storytelling."
+    "description": "A simple logo-led concept for people who want the brand without a huge artwork print. Treat this as an embroidery direction."
   }
 ]
