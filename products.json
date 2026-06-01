@@ -1,0 +1,159 @@
+[
+  {
+    "id": "samurai_tee",
+    "name": "Samurai Mask Tee",
+    "type": "T-Shirt",
+    "print_type": "Printed",
+    "price": 36,
+    "fit": "Oversized Fit",
+    "image": "assets/mockups/samurai_tee.png",
+    "art": "assets/art/samurai.png",
+    "badge": "Limited Drop",
+    "colors": [
+      "Cream",
+      "Black"
+    ],
+    "desc": "Bold samurai artwork printed large on heavyweight cotton. Strong back-print energy for streetwear."
+  },
+  {
+    "id": "ocean_tee",
+    "name": "Ocean Dream Tee",
+    "type": "T-Shirt",
+    "print_type": "Printed",
+    "price": 34,
+    "fit": "Classic Fit",
+    "image": "assets/mockups/ocean_tee.png",
+    "art": "assets/art/ocean.png",
+    "badge": "Artist Pick",
+    "colors": [
+      "Cream"
+    ],
+    "desc": "A full colour underwater scene turned into a clean statement tee."
+  },
+  {
+    "id": "warhammer_black_tee",
+    "name": "Octo Armour Tee",
+    "type": "T-Shirt",
+    "print_type": "Printed",
+    "price": 38,
+    "fit": "Back Print",
+    "image": "assets/mockups/warhammer_black_tee.png",
+    "art": "assets/art/warhammer.png",
+    "badge": "Limited",
+    "colors": [
+      "Black"
+    ],
+    "desc": "Detailed warrior design, best as a black tee with a big back print."
+  },
+  {
+    "id": "pizza_sweatshirt",
+    "name": "Pizza Slice Sweatshirt",
+    "type": "Sweatshirt",
+    "print_type": "Embroidered",
+    "price": 42,
+    "fit": "Relaxed Fit",
+    "image": "assets/mockups/pizza_sweatshirt.png",
+    "art": "assets/art/pizza.png",
+    "badge": "Embroidered",
+    "colors": [
+      "Oat",
+      "Blush",
+      "Black"
+    ],
+    "desc": "Playful pizza icon as a small chest embroidery-style patch."
+  },
+  {
+    "id": "abstract_sweatshirt",
+    "name": "Abstract Lines Sweatshirt",
+    "type": "Sweatshirt",
+    "print_type": "Printed",
+    "price": 44,
+    "fit": "Relaxed Fit",
+    "image": "assets/mockups/abstract_sweatshirt.png",
+    "art": "assets/art/abstract.png",
+    "badge": "One-off Feel",
+    "colors": [
+      "Oat",
+      "Grey"
+    ],
+    "desc": "Colourful abstract watercolour print for a wearable art look."
+  },
+  {
+    "id": "guitar_tee",
+    "name": "Red Guitar Tee",
+    "type": "T-Shirt",
+    "print_type": "Printed",
+    "price": 34,
+    "fit": "Classic Fit",
+    "image": "assets/mockups/guitar_tee.png",
+    "art": "assets/art/guitar.png",
+    "badge": "Music Drop",
+    "colors": [
+      "Black",
+      "Cream"
+    ],
+    "desc": "Red guitar artwork for a music-inspired graphic tee."
+  },
+  {
+    "id": "postbox_sweatshirt",
+    "name": "Crofts Road Sweatshirt",
+    "type": "Sweatshirt",
+    "print_type": "Printed",
+    "price": 46,
+    "fit": "Relaxed Fit",
+    "image": "assets/mockups/postbox_sweatshirt.png",
+    "art": "assets/art/postbox.png",
+    "badge": "Street Sketch",
+    "colors": [
+      "Oat"
+    ],
+    "desc": "Urban sketch print with London postbox colours and handmade texture."
+  },
+  {
+    "id": "logo_hoodie",
+    "name": "Bipzilla Script Hoodie",
+    "type": "Hoodie",
+    "print_type": "Embroidered",
+    "price": 52,
+    "fit": "Heavyweight Hoodie",
+    "image": "assets/mockups/logo_hoodie.png",
+    "art": "assets/brand/bipzilla_logo.png",
+    "badge": "Logo Piece",
+    "colors": [
+      "Black",
+      "Navy"
+    ],
+    "desc": "Minimal logo chest piece using the uploaded Bipzilla text logo style."
+  },
+  {
+    "id": "cow_tee",
+    "name": "Watercolour Cow Tee",
+    "type": "T-Shirt",
+    "print_type": "Printed",
+    "price": 32,
+    "fit": "Oversized Fit",
+    "image": "assets/mockups/cow_tee.png",
+    "art": "assets/art/cow.png",
+    "badge": "Soft Colours",
+    "colors": [
+      "Cream"
+    ],
+    "desc": "Soft cow illustration with loose watercolour texture."
+  },
+  {
+    "id": "card_sweatshirt",
+    "name": "Bipzilla Card Sweatshirt",
+    "type": "Sweatshirt",
+    "print_type": "Embroidered",
+    "price": 48,
+    "fit": "Relaxed Fit",
+    "image": "assets/mockups/card_sweatshirt.png",
+    "art": "assets/art/card_white.png",
+    "badge": "Concept",
+    "colors": [
+      "Oat",
+      "Black"
+    ],
+    "desc": "Card-inspired Bipzilla logo concept for a small embroidered patch."
+  }
+]
