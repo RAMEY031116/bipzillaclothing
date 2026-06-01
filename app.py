@@ -5,7 +5,7 @@ import json
 import urllib.parse
 import streamlit as st
 
-st.set_page_config(page_title="BIPZILLA | Streetwear Demo", page_icon="⚡", layout="wide", initial_sidebar_state="collapsed")
+st.set_page_config(page_title="BIPZILLA | Clothing Brand Demo", page_icon="⚡", layout="wide", initial_sidebar_state="collapsed")
 ROOT = Path(__file__).parent
 PRODUCTS = json.loads((ROOT / "products.json").read_text(encoding="utf-8"))
 
@@ -26,8 +26,17 @@ def image_src(path: str) -> str:
 def money(value) -> str:
     return f"£{float(value):,.2f}"
 
+def current_theme() -> str:
+    theme = st.query_params.get("theme", "pink")
+    return theme if theme in ["pink", "dark"] else "pink"
+
+def theme_url(theme: str) -> str:
+    data = dict(st.query_params)
+    data["theme"] = theme
+    return "?" + urllib.parse.urlencode(data, doseq=True)
+
 def nav_url(page: str, **kwargs) -> str:
-    data = {"page": page}
+    data = {"page": page, "theme": current_theme()}
     data.update(kwargs)
     return "?" + urllib.parse.urlencode(data)
 
@@ -77,7 +86,7 @@ section,div,p,h1,h2,h3,h4,a,span{font-family:Inter,Arial,Helvetica,sans-serif;}
 .bz-menu{display:flex;align-items:center;gap:42px;}
 .bz-menu a{height:106px;display:flex;align-items:center;color:#111;text-decoration:none;text-transform:uppercase;font-weight:900;font-size:13px;letter-spacing:.035em;border-bottom:4px solid transparent;}
 .bz-menu a.active{border-bottom-color:var(--pink);color:#000;}
-.bz-actions{display:flex;align-items:center;gap:20px;font-size:26px;min-width:180px;justify-content:flex-end;}.bz-actions a{color:#111;text-decoration:none}.cart-badge{display:inline-flex;align-items:center;justify-content:center;background:var(--pink);color:#fff;font-size:11px;font-weight:900;border-radius:999px;min-width:20px;height:20px;margin-left:-20px;margin-top:26px;}
+.bz-actions{display:flex;align-items:center;gap:14px;font-size:24px;min-width:230px;justify-content:flex-end;}.bz-actions a{color:#111;text-decoration:none}.theme-chip{height:30px!important;padding:0 12px!important;border:1px solid #111!important;border-radius:999px!important;font-size:11px!important;font-weight:900!important;text-transform:uppercase!important;display:inline-flex!important;align-items:center!important}.theme-chip.active{background:#111!important;color:#fff!important}.cart-badge{display:inline-flex;align-items:center;justify-content:center;background:var(--pink);color:#fff;font-size:11px;font-weight:900;border-radius:999px;min-width:20px;height:20px;margin-left:-20px;margin-top:26px;}
 .hero{min-height:650px;display:grid;grid-template-columns:43% 57%;border-bottom:1px solid var(--line);background:#fff;overflow:hidden;}
 .hero-copy{padding:92px 0 70px 7vw;display:flex;flex-direction:column;justify-content:center;}
 .eyebrow{font-size:13px;font-weight:900;color:var(--pink);letter-spacing:.08em;text-transform:uppercase;}.headline{font-family:Impact,Arial Black,sans-serif;font-size:88px;line-height:.92;letter-spacing:.005em;margin:20px 0 22px;text-transform:uppercase;}.headline span{color:var(--pink);}.hero-copy p{font-size:17px;line-height:1.7;max-width:440px;color:#222;margin:0;}
@@ -87,8 +96,8 @@ section,div,p,h1,h2,h3,h4,a,span{font-family:Inter,Arial,Helvetica,sans-serif;}
 .btn-row{display:flex;gap:28px;margin-top:42px;flex-wrap:wrap;}.btn-pink,.btn-outline{height:58px;padding:0 32px;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;text-transform:uppercase;font-size:13px;font-weight:900;letter-spacing:.02em;}.btn-pink{background:var(--pink);color:#fff;box-shadow:0 12px 30px rgba(238,44,97,.22);}.btn-outline{background:#fff;color:#111;border:1.5px solid #111;}
 .trust{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line);}.trust-card{min-height:92px;padding:25px 28px;border-right:1px solid var(--line);display:flex;align-items:center;gap:17px;}.trust-card:first-child{padding-left:7vw;}.trust-icon{font-size:33px;line-height:1}.trust-card b{display:block;text-transform:uppercase;font-size:14px;font-weight:900;}.trust-card span{font-size:13px;color:#666;}
 .container{padding-left:7vw;padding-right:7vw;}.section-head{display:flex;justify-content:space-between;align-items:flex-end;margin:50px 0 20px;}.small-label{font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--pink);}.section-title{font-family:Impact,Arial Black,sans-serif;text-transform:uppercase;font-size:48px;line-height:1;margin:8px 0 0;}.view-link{font-size:13px;font-weight:900;text-transform:uppercase;color:#111;text-decoration:none;}
-.product-shell{margin-bottom:32px;}.product-card{background:#fff;}.product-image{background:#f6f6f5;position:relative;overflow:hidden;border:1px solid #f0f0f0;}.product-image img{width:100%;aspect-ratio:1/1.12;display:block;object-fit:cover;transition:transform .28s ease;}.product-shell:hover .product-image img{transform:scale(1.025);}.badge{position:absolute;top:14px;left:14px;background:#111;color:white;text-transform:uppercase;font-size:10px;font-weight:900;letter-spacing:.06em;padding:8px 10px;}.product-name{font-size:16px;font-weight:950;text-transform:uppercase;margin-top:15px;}.product-meta{font-size:12px;color:#686868;line-height:1.45;min-height:38px;margin-top:4px;}.product-price{font-size:15px;font-weight:950;margin-top:7px;}.swatches{margin-top:10px}.swatch{display:inline-block;width:16px;height:16px;border-radius:99px;border:1px solid rgba(0,0,0,.25);margin-right:8px;}.mini-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px;}.mini-actions a,.mini-actions span{height:38px;border:1px solid #111;display:flex;align-items:center;justify-content:center;color:#111;text-decoration:none;font-size:12px;font-weight:900;text-transform:uppercase;}
-.story{display:grid;grid-template-columns:42% 58%;min-height:335px;background:#f7f7f6;margin:42px 0 0;}.story-img{background-size:cover;background-position:center;min-height:335px;}.story-copy{position:relative;overflow:hidden;padding:54px 62px;background:radial-gradient(circle at right center,rgba(238,44,97,.12),transparent 36%),#f7f7f6;}.story-copy h2{font-family:Impact,Arial Black,sans-serif;font-size:48px;line-height:.95;text-transform:uppercase;margin:9px 0 17px;}.story-copy p{max-width:540px;line-height:1.65;color:#30343a;}.big-kanji{position:absolute;right:36px;top:20px;font-size:170px;font-weight:900;color:rgba(0,0,0,.08);line-height:1;}.crown-mark{position:absolute;right:95px;bottom:45px;font-size:72px;color:var(--pink);transform:rotate(-8deg);}
+.product-shell{margin-bottom:32px;}.product-card{background:#fff;}.product-image{background:#f6f6f5;position:relative;overflow:hidden;border:1px solid #f0f0f0;}.product-image img{width:100%;aspect-ratio:1/1.12;display:block;object-fit:contain;background:#f6f6f5;transition:transform .28s ease;}.product-shell:hover .product-image img{transform:scale(1.025);}.badge{position:absolute;top:14px;left:14px;background:#111;color:white;text-transform:uppercase;font-size:10px;font-weight:900;letter-spacing:.06em;padding:8px 10px;}.product-name{font-size:16px;font-weight:950;text-transform:uppercase;margin-top:15px;}.product-meta{font-size:12px;color:#686868;line-height:1.45;min-height:38px;margin-top:4px;}.product-price{font-size:15px;font-weight:950;margin-top:7px;}.swatches{margin-top:10px}.swatch{display:inline-block;width:16px;height:16px;border-radius:99px;border:1px solid rgba(0,0,0,.25);margin-right:8px;}.mini-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px;}.mini-actions a,.mini-actions span{height:38px;border:1px solid #111;display:flex;align-items:center;justify-content:center;color:#111;text-decoration:none;font-size:12px;font-weight:900;text-transform:uppercase;}
+.story{display:grid;grid-template-columns:42% 58%;min-height:335px;background:#f7f7f6;margin:42px 0 0;}.story-img{background-size:cover;background-position:center;min-height:335px;}.story-copy{position:relative;overflow:hidden;padding:54px 62px;background:radial-gradient(circle at right center,rgba(238,44,97,.12),transparent 36%),#f7f7f6;}.story-copy h2{font-family:Impact,Arial Black,sans-serif;font-size:48px;line-height:.95;text-transform:uppercase;margin:9px 0 17px;}.story-copy p{max-width:540px;line-height:1.65;color:#30343a;}.big-kanji{position:absolute;right:36px;top:20px;font-size:170px;font-weight:900;color:rgba(0,0,0,.08);line-height:1;}.brand-stamp{position:absolute;right:90px;bottom:48px;font-size:50px;font-weight:950;color:var(--pink);transform:rotate(-8deg);letter-spacing:.03em;}
 .newsletter{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;border-top:1px solid var(--line);padding:46px 7vw;}.newsletter h3{font-family:Impact,Arial Black,sans-serif;text-transform:uppercase;font-size:34px;margin:6px 0 6px;}.signup{display:grid;grid-template-columns:1fr 170px;gap:12px}.signup input{height:54px;border:1px solid #ddd;padding:0 18px;font-size:14px;}.signup button{height:54px;background:var(--pink);border:none;color:white;text-transform:uppercase;font-weight:900;}
 .footer{background:#070708;color:white;display:grid;grid-template-columns:1.6fr repeat(4,1fr);gap:40px;padding:48px 7vw 55px;}.footer img{height:62px;width:auto;filter:brightness(1.2);}.footer h4{font-size:13px;text-transform:uppercase;margin:0 0 12px;}.footer a,.footer p{display:block;color:#c9c9c9;font-size:13px;text-decoration:none;margin:7px 0;}.footer .tag{color:var(--pink);font-weight:900;margin-top:26px;text-transform:uppercase;}
 .page-pad{padding:46px 7vw 20px;}.page-intro{max-width:840px;color:#505762;font-size:16px;line-height:1.7;}.filter-box{border:1px solid var(--line);background:#fafafa;padding:20px;margin-bottom:24px;}.detail-wrap{padding:50px 7vw;display:grid;grid-template-columns:55% 45%;gap:54px;}.detail-img{background:#f5f5f4;border:1px solid #eee;}.detail-img img{width:100%;display:block;}.detail h1{font-family:Impact,Arial Black,sans-serif;font-size:64px;text-transform:uppercase;line-height:.95;margin:14px 0 10px;}.detail p{font-size:16px;line-height:1.7;color:#343941;}.pill{display:inline-block;background:#111;color:white;font-size:10px;text-transform:uppercase;font-weight:900;padding:8px 10px;margin-right:6px;letter-spacing:.06em;}.pill.pink{background:var(--pink);}.notice{border:1px dashed #b99432;background:#fff7dd;color:#57410d;padding:16px;margin-top:18px;font-weight:800;}.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}.gallery img{width:100%;aspect-ratio:1/1.22;object-fit:cover;background:#f3f3f3;border:1px solid #eee;}.brand-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:22px;}.brand-card{border:1px solid var(--line);background:#fafafa;padding:28px;min-height:200px;}.brand-card h3{font-family:Impact,Arial Black,sans-serif;text-transform:uppercase;font-size:34px;margin:0 0 10px;}.contact-card,.cart-box{border:1px solid var(--line);background:#fafafa;padding:28px;}.cart-line{border:1px solid #e4e4e4;background:#fff;padding:16px;margin-bottom:12px;}.muted{color:#686868;}.stButton>button{border-radius:0!important;border:1px solid #111!important;text-transform:uppercase!important;font-weight:900!important;min-height:42px!important;background:white!important;color:#111!important;}.stButton>button[kind="primary"]{background:var(--pink)!important;border-color:var(--pink)!important;color:white!important;}.stTextInput input,.stTextArea textarea,.stSelectbox div[data-baseweb="select"]{border-radius:0!important;}
@@ -97,28 +106,54 @@ section,div,p,h1,h2,h3,h4,a,span{font-family:Inter,Arial,Helvetica,sans-serif;}
 </style>
 ''', unsafe_allow_html=True)
 
+# Theme override: default is the pink/white ecommerce look. Use the navbar toggle for dark mode.
+if current_theme() == "dark":
+    st.markdown('''
+<style>
+:root{--pink:#ff3f77;--pink2:#ff6aa0;--ink:#f5f2ef;--muted:#b9b3b0;--line:#29252a;--soft:#111116;--cream:#151319;--black:#050506;}
+body,[data-testid="stAppViewContainer"]{background:#08080b!important;color:#f5f2ef!important;}
+.bz-nav,.hero,.newsletter,.page-pad,.container{background:#08080b!important;color:#f5f2ef!important;}
+.bz-nav{border-bottom:1px solid #262129!important;box-shadow:0 10px 36px rgba(0,0,0,.45)!important;}
+.bz-menu a,.bz-actions a,.headline,.section-title,.view-link,.product-name,.product-price,.detail h1,.detail h2,.newsletter h3,.trust-card b{color:#f5f2ef!important;}
+.theme-chip{border-color:#f5f2ef!important;color:#f5f2ef!important}.theme-chip.active{background:#ff3f77!important;border-color:#ff3f77!important;color:#fff!important;}
+.hero{background:radial-gradient(circle at 75% 35%,rgba(255,63,119,.22),transparent 34%),#08080b!important;}
+.hero-art:before{background:linear-gradient(90deg,#08080b 0%,rgba(8,8,11,.45) 22%,rgba(8,8,11,0) 52%)!important;}
+.hero-copy p,.page-intro,.muted,.product-meta,.story-copy p,.trust-card span,.footer p,.detail p{color:#c8c2bd!important;}
+.trust{background:#0d0d11!important;border-color:#262129!important;}.trust-card{border-color:#262129!important;}
+.product-image,.product-image img,.detail-img img{background:#111116!important;border-color:#211d23!important;}
+.product-card{background:#08080b!important;}
+.story,.story-copy{background:#101015!important;}.story-copy{background:radial-gradient(circle at right center,rgba(255,63,119,.16),transparent 38%),#101015!important;}
+.big-kanji{color:rgba(255,255,255,.07)!important;}.brand-card,.contact-card{background:#101015!important;border-color:#262129!important;}
+input, textarea, select, .stTextInput input, .stTextArea textarea{background:#121218!important;color:#f5f2ef!important;border-color:#29252a!important;}
+</style>
+''', unsafe_allow_html=True)
+
+
 # ---------------------------- layout pieces ----------------------------
 def top_nav(active="Home"):
     logo = image_src("assets/brand/bipzilla_wordmark.png")
     pages = ["Home", "Shop", "New In", "Lookbook", "About", "Contact"]
     links = "".join([f'<a class="{"active" if p==active else ""}" href="{nav_url(p)}">{p}</a>' for p in pages])
+    pink_active = "active" if current_theme() == "pink" else ""
+    dark_active = "active" if current_theme() == "dark" else ""
     st.markdown(f'''
-<div class="bz-topbar">♕ Free UK shipping on all demo orders over £70</div>
+<div class="bz-topbar">✦ Free UK shipping on demo orders over £70 • Limited demo drop</div>
 <nav class="bz-nav">
   <a class="logo-wrap" href="{nav_url('Home')}"><img src="{logo}" alt="BIPZILLA logo"></a>
   <div class="bz-menu">{links}</div>
-  <div class="bz-actions"><a href="{nav_url('Shop')}">⌕</a><a href="{nav_url('Cart')}">🛒</a><span class="cart-badge">{cart_count()}</span></div>
+  <div class="bz-actions"><a class="theme-chip {pink_active}" href="{theme_url('pink')}">Pink</a><a class="theme-chip {dark_active}" href="{theme_url('dark')}">Dark</a><a href="{nav_url('Shop')}">⌕</a><a href="{nav_url('Cart')}">🛒</a><span class="cart-badge">{cart_count()}</span></div>
 </nav>
 ''', unsafe_allow_html=True)
     if st.session_state.notice:
         st.success(st.session_state.notice)
         st.session_state.notice = ""
 
+
 def footer():
     logo = image_src("assets/brand/bipzilla_wordmark.png")
     st.markdown(f'''
 <div class="footer">
-  <div><img src="{logo}" alt="BIPZILLA"><p>© 2026 BIPZILLA demo. Built for Streamlit Cloud. Prices, stock and checkout are placeholders.</p></div>
+  <div><img src="{logo}" alt="BIPZILLA"><p>© 2026 BIPZILLA demo. Built for Streamlit Cloud. Prices, stock and checkout are placeholders for the demo.</p></div>
   <div><h4>Shop</h4><a href="{nav_url('Shop')}">All Products</a><a href="{nav_url('Shop')}">T-Shirts</a><a href="{nav_url('Shop')}">Hoodies</a><a href="{nav_url('Shop')}">Sweatshirts</a></div>
   <div><h4>Info</h4><a href="{nav_url('About')}">About Us</a><a>Shipping</a><a>Returns</a><a>Size Guide</a></div>
   <div><h4>Support</h4><a href="{nav_url('Contact')}">Contact Us</a><a>FAQ</a><a>Track Order</a><a>Privacy Policy</a></div>
@@ -159,7 +194,7 @@ def home():
   <div class="hero-copy">
     <div class="eyebrow">ART • CULTURE • STREETWEAR</div>
     <h1 class="headline">WEAR<br>YOUR STORY<span>.</span></h1>
-    <p>BIPZILLA is a clothing brand built around original art, bold graphics and limited streetwear drops. T-shirts, hoodies and sweatshirts made to feel like proper products, not just artwork on a page.</p>
+    <p>BIPZILLA is a clothing brand built on original art, bold graphics and limited streetwear drops. T-shirts, hoodies and sweatshirts designed as real products, not just art on a blank page.</p>
     <div class="btn-row"><a class="btn-pink" href="{nav_url('Shop')}">Shop the drop →</a><a class="btn-outline" href="{nav_url('About')}">About BIPZILLA</a></div>
   </div>
   <div class="hero-art" style="background-image:url('{image_src('assets/hero_hoodie.jpg')}');"><div class="jp-vertical">ビップジラ</div></div>
@@ -184,7 +219,7 @@ def home():
       <h2>MORE THAN CLOTHES.<br>IT'S A MOVEMENT.</h2>
       <p>BIPZILLA takes sketchbook energy and turns it into wearable streetwear. Big print pieces carry the artwork, while cleaner logo pieces can become embroidery ideas.</p>
       <a class="btn-outline" href="{nav_url('About')}">Read our story →</a>
-      <div class="big-kanji">夢</div><div class="crown-mark">♕</div>
+      <div class="big-kanji">夢</div><div class="brand-stamp">BIP</div>
     </div>
   </section>
 </div>
@@ -195,11 +230,11 @@ def home():
 ''', unsafe_allow_html=True)
 
 def shop(new_only=False):
-    items = PRODUCTS[:5] if new_only else PRODUCTS
+    items = [p for p in PRODUCTS if p.get("new")] if new_only else PRODUCTS
     title = "New In" if new_only else "Shop the Drop"
     st.markdown(f'''
 <div class="page-pad"><div class="small-label">BIPZILLA Store</div><div class="section-title">{title}</div>
-<p class="page-intro">A proper clothing-brand demo with real-looking garment mockups, GBP prices, product pages, a working demo cart and a contact form. No real payment is connected.</p></div>
+<p class="page-intro">A proper clothing-brand ecommerce demo with realistic garment mockups, GBP prices, product pages, filters, a working demo cart and a contact form. No real payment is connected.</p></div>
 ''', unsafe_allow_html=True)
     st.markdown('<div class="container">', unsafe_allow_html=True)
     with st.container():
@@ -243,7 +278,7 @@ def product_page():
 
 def lookbook():
     st.markdown('''<div class="page-pad"><div class="small-label">Artwork Archive</div><div class="section-title">Lookbook</div><p class="page-intro">This page keeps the art visible, but the site still feels like a clothing brand first. Use this for Instagram-style storytelling and drop previews.</p></div>''', unsafe_allow_html=True)
-    art_files = ["samurai.jpg","ocean.jpg","warrior_colour.jpg","pizza.jpg","abstract.jpg","lamp_clock.jpg","postbox.jpg","cow.jpg","guitar.jpg","koi_narayan.jpg","card_black.jpg","card_white.jpg"]
+    art_files = ["samurai.jpg","ocean.jpg","warrior_colour.jpg","warrior_bw.jpg","pizza.jpg","abstract.jpg","cow.jpg","guitar.jpg","lamp_clock.jpg","postbox.jpg","city_night.jpg","card_black.jpg","card_white.jpg"]
     html = '<div class="page-pad"><div class="gallery">'
     for f in art_files:
         path = f"assets/art/{f}"
@@ -256,10 +291,10 @@ def about():
     st.markdown('''
 <div class="page-pad">
   <div class="small-label">About</div><div class="section-title">BIPZILLA is a clothing brand.</div>
-  <p class="page-intro">This demo is set up as a streetwear ecommerce site: a strong homepage, product grid, product pages, lookbook, contact page and a working demo cart. The artwork is the identity, but the website sells clothes first.</p>
+  <p class="page-intro">This demo is set up as a proper clothing-brand ecommerce site: a strong homepage, product grid, product pages, lookbook, contact page and a working demo cart, pink/dark theme switch, realistic clothing mockups and embroidery-style items. The artwork is the identity, but the website sells clothes first.</p>
   <div class="brand-grid">
     <div class="brand-card"><h3>01. Limited</h3><p class="muted">Start with a small collection. A tight drop looks stronger than too many random products.</p></div>
-    <div class="brand-card"><h3>02. Wearable</h3><p class="muted">Use large back prints for statement hoodies and simple chest logo pieces for embroidery ideas.</p></div>
+    <div class="brand-card"><h3>02. Wearable</h3><p class="muted">Use large back prints for statement hoodies and simple chest-logo pieces for embroidery ideas. No generic crown mark is used; the identity is the BIPZILLA wordmark and Japanese-style typography.</p></div>
     <div class="brand-card"><h3>03. Original</h3><p class="muted">Keep your uploaded artwork recognisable. The mockups show the art printed on real-looking garments.</p></div>
   </div>
 </div>

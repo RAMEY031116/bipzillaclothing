@@ -1,22 +1,28 @@
-# BIPZILLA Streamlit Clothing Brand Demo
+# BIPZILLA Streamlit Clothing Brand Demo v7
 
-This is a fully working Streamlit demo website for a clothing/streetwear brand. It includes:
+A complete Streamlit ecommerce-style demo for the BIPZILLA clothing brand.
 
-- Home page styled like a proper ecommerce streetwear homepage
-- Top navigation menu: Home, Shop, New In, Lookbook, About, Contact
-- Realistic product mockup images for hoodies, T-shirts and sweatshirts
-- Product detail pages
-- Working demo cart using Streamlit session state
-- Dummy checkout and contact form
-- GBP prices and limited-drop wording
+Includes:
+- Homepage similar to the reference layout
+- Pink default theme plus Dark theme toggle
+- Shop, New In, Lookbook, About, Contact and Demo Cart pages
+- Realistic hoodie, T-shirt and sweatshirt mockups
+- Large print pieces and embroidery-style pieces
+- GBP demo prices and a working Streamlit session-state cart
+- Dummy contact/checkout only; no real payment
 
-## Upload to GitHub / Streamlit Cloud
+## Run locally
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
 
-1. Create a new GitHub repository.
-2. Upload all files from this folder, not the ZIP file itself.
-3. Go to Streamlit Cloud.
-4. Click **New app**.
-5. Select your repository and choose `app.py` as the main file.
-6. Deploy.
+## Deploy on Streamlit Cloud
+1. Unzip this folder.
+2. Upload every file to a GitHub repository.
+3. In Streamlit Cloud, select the repo.
+4. Main file path: `app.py`.
+5. Deploy.
 
-This is a demo only. No real payment, order fulfilment or email sending is connected yet.
+## Edit products
+Change names, prices, descriptions and images in `products.json`. Product images are in `assets/products/`.

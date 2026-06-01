@@ -15,21 +15,86 @@
       "S",
       "M",
       "L",
+      "XL",
+      "XXL"
+    ],
+    "new": true,
+    "description": "The hero BIPZILLA piece: a black heavyweight hoodie with the playing-card artwork printed large across the back. Clean front branding, bold back graphic and premium streetwear feel."
+  },
+  {
+    "id": "tokyo-nights-hoodie",
+    "name": "Tokyo Night Hoodie",
+    "category": "Hoodie",
+    "price": 66.99,
+    "colour": "White / Pink / Black",
+    "fit": "Oversized fit",
+    "print_type": "Back Print + Chest Logo",
+    "finish": "Back graphic, Japanese BIPZILLA text and chest wordmark",
+    "image": "assets/products/tokyo_nights_hoodie.jpg",
+    "art": "assets/art/card_black.jpg",
+    "stock": 14,
+    "sizes": [
+      "S",
+      "M",
+      "L",
       "XL"
     ],
-    "description": "The hero BIPZILLA piece: a black heavyweight hoodie with the playing-card artwork printed large across the back. Built to feel like a proper streetwear drop."
+    "new": true,
+    "description": "White hoodie with vertical Japanese BIPZILLA lettering and a pink-black street graphic. This is the Tokyo night identity piece."
+  },
+  {
+    "id": "armoured-warlord-hoodie",
+    "name": "Armoured Warlord Hoodie",
+    "category": "Hoodie",
+    "price": 69.99,
+    "colour": "Washed Black / Purple Ink",
+    "fit": "Heavy oversized fit",
+    "print_type": "Large Back Print",
+    "finish": "Large fantasy back print with small stitched-style BIPZILLA front mark",
+    "image": "assets/products/armoured_warlord_hoodie.jpg",
+    "art": "assets/art/warrior_colour.jpg",
+    "stock": 10,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "new": true,
+    "description": "Dark statement hoodie using the armoured warrior artwork direction. Heavy black base, purple ink energy and a clean BIPZILLA chest mark."
+  },
+  {
+    "id": "samurai-riot-tee",
+    "name": "Samurai Riot Tee",
+    "category": "T-Shirt",
+    "price": 36.99,
+    "colour": "Natural White",
+    "fit": "Relaxed boxy fit",
+    "print_type": "Front Print",
+    "finish": "Full colour artwork print",
+    "image": "assets/products/samurai_riot_tee.jpg",
+    "art": "assets/art/samurai.jpg",
+    "stock": 22,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "new": true,
+    "description": "The colourful samurai artwork printed on a natural white tee. High-impact artwork, simple garment and easy styling."
   },
   {
     "id": "royal-bloom-tee",
     "name": "Royal Bloom Tee",
     "category": "T-Shirt",
     "price": 34.99,
-    "colour": "Vintage White",
-    "fit": "Relaxed boxy fit",
-    "print_type": "Front Print",
+    "colour": "Black",
+    "fit": "Relaxed fit",
+    "print_type": "Back Print + Chest Logo",
     "finish": "Soft hand-feel artwork print",
     "image": "assets/products/royal_bloom_tee.jpg",
-    "art": "assets/art/card_white.jpg",
+    "art": "assets/art/card_black.jpg",
     "stock": 24,
     "sizes": [
       "S",
@@ -37,27 +102,8 @@
       "L",
       "XL"
     ],
-    "description": "A clean tee version of the Royal Bloom card artwork. Minimal garment, bold centre print, easy to wear."
-  },
-  {
-    "id": "samurai-mask-tee",
-    "name": "Samurai Mask Tee",
-    "category": "T-Shirt",
-    "price": 36.99,
-    "colour": "Natural White",
-    "fit": "Relaxed streetwear fit",
-    "print_type": "Front Print",
-    "finish": "Full colour artwork print",
-    "image": "assets/products/samurai_mask_tee.jpg",
-    "art": "assets/art/samurai.jpg",
-    "stock": 20,
-    "sizes": [
-      "S",
-      "M",
-      "L",
-      "XL"
-    ],
-    "description": "The colourful samurai artwork printed on a natural white tee. This is the louder art piece in the first collection."
+    "new": false,
+    "description": "A black tee version of the Royal Bloom card artwork. Small BIPZILLA chest mark, large back print and clean streetwear layout."
   },
   {
     "id": "ocean-drift-hoodie",
@@ -77,27 +123,50 @@
       "L",
       "XL"
     ],
-    "description": "The underwater illustration becomes a statement hoodie. The navy base keeps it wearable while the art stays expressive."
+    "new": false,
+    "description": "The underwater illustration becomes a statement navy hoodie. The dark base keeps it wearable while the watercolour art stays expressive."
   },
   {
-    "id": "tokyo-nights-hoodie",
-    "name": "Tokyo Nights Hoodie",
-    "category": "Hoodie",
-    "price": 64.99,
-    "colour": "Black / Pink",
-    "fit": "Oversized fit",
-    "print_type": "Back Print",
-    "finish": "Japanese-style back graphic",
-    "image": "assets/products/tokyo_nights_hoodie.jpg",
-    "art": "assets/art/card_black.jpg",
-    "stock": 14,
+    "id": "penguin-drift-sweatshirt",
+    "name": "Penguin Drift Sweatshirt",
+    "category": "Sweatshirt",
+    "price": 52.99,
+    "colour": "Deep Navy",
+    "fit": "Relaxed crewneck",
+    "print_type": "Front Print",
+    "finish": "Painterly front print with neck logo",
+    "image": "assets/products/penguin_drift_sweatshirt.jpg",
+    "art": "assets/art/fish.jpg",
+    "stock": 20,
     "sizes": [
       "S",
       "M",
       "L",
       "XL"
     ],
-    "description": "A darker hoodie with a vertical Japanese BIPZILLA mark. Good for the brand identity and lookbook shots."
+    "new": false,
+    "description": "A cosy navy crewneck using the playful penguin artwork direction. Good as a softer product in the collection."
+  },
+  {
+    "id": "cow-drip-hoodie",
+    "name": "Cow Drip Hoodie",
+    "category": "Hoodie",
+    "price": 64.99,
+    "colour": "Black / Blue / Pink",
+    "fit": "Oversized fit",
+    "print_type": "Back Print + Chest Logo",
+    "finish": "Watercolour back print with small front logo",
+    "image": "assets/products/cow_drift_hoodie.jpg",
+    "art": "assets/art/cow.jpg",
+    "stock": 15,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "new": false,
+    "description": "A black hoodie with a large watercolour cow portrait on the back and a small BIPZILLA chest mark. It keeps your loose paint style but feels like a proper garment."
   },
   {
     "id": "pizza-slice-sweatshirt",
@@ -117,19 +186,20 @@
       "L",
       "XL"
     ],
-    "description": "A playful pink crewneck with the pizza illustration. Fun, simple and made for social posts."
+    "new": false,
+    "description": "A playful soft pink crewneck with the hand-painted pizza illustration. Fun, clean and made for social posts."
   },
   {
-    "id": "bipzilla-logo-crew",
-    "name": "BIPZILLA Logo Crew",
+    "id": "pizza-melt-crew",
+    "name": "Pizza Melt Crew",
     "category": "Sweatshirt",
-    "price": 44.99,
-    "colour": "Black",
-    "fit": "Relaxed crewneck",
-    "print_type": "Embroidery Concept",
-    "finish": "Small chest wordmark / embroidery idea",
-    "image": "assets/products/royal_bloom_model.jpg",
-    "art": "assets/brand/bipzilla_wordmark.png",
+    "price": 54.99,
+    "colour": "Cream / Pink",
+    "fit": "Oversized crewneck",
+    "print_type": "Graphic Front Print",
+    "finish": "Street graphic with Japanese-style details",
+    "image": "assets/products/pizza_melt_crew.jpg",
+    "art": "assets/art/pizza.jpg",
     "stock": 12,
     "sizes": [
       "S",
@@ -137,6 +207,134 @@
       "L",
       "XL"
     ],
-    "description": "A simple logo-led concept for people who want the brand without a huge artwork print. Treat this as an embroidery direction."
+    "new": false,
+    "description": "A more streetwear version of the pizza idea, with bolder sauce-drip energy and a BIPZILLA logo on the back neck."
+  },
+  {
+    "id": "urban-story-hoodie",
+    "name": "Urban Story Hoodie",
+    "category": "Hoodie",
+    "price": 67.99,
+    "colour": "Black / Pink",
+    "fit": "Oversized fit",
+    "print_type": "Back Text Print",
+    "finish": "BIPZILLA Japanese back graphic",
+    "image": "assets/products/urban_story_hoodie.jpg",
+    "art": "assets/art/city_night.jpg",
+    "stock": 11,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "new": false,
+    "description": "A black hoodie designed for the lookbook: Japanese BIPZILLA text on the back with a night streetwear mood."
+  },
+  {
+    "id": "samurai-minimal-tee",
+    "name": "Samurai Minimal Tee",
+    "category": "T-Shirt",
+    "price": 32.99,
+    "colour": "White",
+    "fit": "Relaxed fit",
+    "print_type": "Front Print + Back Logo",
+    "finish": "Clean front artwork and small back logo",
+    "image": "assets/products/samurai_minimal_tee.jpg",
+    "art": "assets/art/samurai.jpg",
+    "stock": 26,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "new": false,
+    "description": "A cleaner tee for people who like the samurai art but want something easier to wear day to day."
+  },
+  {
+    "id": "bipzilla-script-embroidery-hoodie",
+    "name": "BIPZILLA Script Embroidery Hoodie",
+    "category": "Hoodie",
+    "price": 59.99,
+    "colour": "Washed Black",
+    "fit": "Heavy oversized fit",
+    "print_type": "Chest Embroidery",
+    "finish": "Small BIPZILLA stitch-style chest logo, no large back art",
+    "image": "assets/products/bipzilla_script_embroidery_hoodie.jpg",
+    "art": "assets/brand/bipzilla_wordmark.png",
+    "stock": 18,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "new": true,
+    "description": "A cleaner logo-only hoodie for everyday wear. This is the embroidery-style piece in the drop: small chest branding, heavyweight black fleece and no crown graphic."
+  },
+  {
+    "id": "navy-stitch-sweatshirt",
+    "name": "Navy Stitch Sweatshirt",
+    "category": "Sweatshirt",
+    "price": 48.99,
+    "colour": "Deep Navy",
+    "fit": "Relaxed crewneck",
+    "print_type": "Small Embroidery",
+    "finish": "Minimal back-neck BIPZILLA stitch detail",
+    "image": "assets/products/navy_stitch_sweatshirt.jpg",
+    "art": "assets/brand/bipzilla_wordmark.png",
+    "stock": 19,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "new": false,
+    "description": "A minimal navy crewneck concept for people who want the BIPZILLA feel without a huge graphic. Built as a smart embroidery option."
+  },
+  {
+    "id": "night-script-tee",
+    "name": "Night Script Tee",
+    "category": "T-Shirt",
+    "price": 34.99,
+    "colour": "Black / Pink / Teal",
+    "fit": "Relaxed boxy fit",
+    "print_type": "Front + Back Print",
+    "finish": "BIPZILLA text graphic with streetwear back print",
+    "image": "assets/products/night_script_tee.jpg",
+    "art": "assets/brand/bipzilla_wordmark.png",
+    "stock": 20,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "new": false,
+    "description": "Own-design BIPZILLA tee idea with sharper text energy, black base and colour accents. Good for a more logo-led drop."
+  },
+  {
+    "id": "sauce-tag-sweatshirt",
+    "name": "Sauce Tag Sweatshirt",
+    "category": "Sweatshirt",
+    "price": 54.99,
+    "colour": "Cream / Pink",
+    "fit": "Oversized crewneck",
+    "print_type": "Graphic Front Print",
+    "finish": "Pizza artwork plus Japanese-style text layout",
+    "image": "assets/products/sauce_tag_sweatshirt.jpg",
+    "art": "assets/art/pizza.jpg",
+    "stock": 13,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "new": false,
+    "description": "A more streetwear version of the pizza artwork with text details, softer colour and a wearable oversized crewneck shape."
   }
 ]
