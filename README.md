@@ -1,20 +1,41 @@
-# BIPZILLA Streamlit Ecommerce Demo v11
+# Bipzilla V12 Streamlit Website Demo
 
-A working Streamlit Cloud demo for a streetwear clothing brand.
+This is a fuller Streamlit website-style demo for the Bipzilla first drop.
 
-## Run locally
+## What it includes
+
+- Premium streetwear homepage
+- Multi-page navigation
+- Shop page with filters
+- Product detail page
+- Lookbook page
+- About page
+- Asset upload guide
+- Realistic clothing-photo placeholders
+- First-drop collections:
+  - Ace of Hearts
+  - Pizza Samurai
+  - Last Knight
+  - Bloom
+
+## How to run
+
 ```bash
 pip install -r requirements.txt
-streamlit run streamlit_app.py
+streamlit run app.py
 ```
 
-## Upload to GitHub / Streamlit Cloud
-1. Upload the full contents of this folder to a GitHub repository.
-2. In Streamlit Cloud, choose the repo.
-3. Main file path: `streamlit_app.py`
-4. Deploy.
+## What to replace
 
-## Notes
-- This is a demo ecommerce website. Checkout/contact are dummy flows.
-- Product images are included in the `assets/` folder so they should load on Streamlit Cloud.
-- Navigation uses Streamlit buttons, so it stays in the same page/tab.
+The current product images are photo-based placeholders from Unsplash. Replace them with your own final:
+
+- Bipzilla logo text image
+- Ace of Hearts artwork
+- Pizza Samurai artwork
+- Knight artwork
+- Tulip/Bloom logo artwork
+- Realistic front/back/model clothing mockups
+
+## Important
+
+This is a realistic website demo, not a real ecommerce checkout yet. To sell products, connect the concept to Shopify, WooCommerce, or Stripe later.
