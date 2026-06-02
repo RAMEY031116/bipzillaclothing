@@ -1,4 +1,3 @@
-
 import base64
 from pathlib import Path
 import streamlit as st
@@ -27,13 +26,8 @@ def img64(filename: str) -> str:
 
 
 def qp_get(name: str, default: str = "") -> str:
-    try:
-        val = st.query_params.get(name, default)
-    except Exception:
-        val = default
-    if isinstance(val, list):
-        return val[0] if val else default
-    return val or default
+    """Fetches query parameters using modern Streamlit native API."""
+    return st.query_params.get(name, default)
 
 
 def money(v: float) -> str:
