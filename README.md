@@ -1,15 +1,6 @@
-# BIPZILLA Streamlit Ecommerce Demo v8
+# BIPZILLA Streamlit Ecommerce Demo v9
 
-This is a Streamlit Cloud-ready demo for a streetwear clothing brand.
-
-## Features
-- Pink theme by default, plus dark mode toggle
-- Realistic hoodies, tees and sweatshirts
-- Mix of bold graphic prints and embroidery products
-- Japanese / English streetwear-inspired styling
-- Product grid, product detail pages, working demo cart
-- Lookbook page with campaign visuals only (no raw source art)
-- Contact page and About page
+A full Streamlit clothing-brand demo with product pages, filters, a demo cart, contact page, pink/dark theme toggle and a fading hero slideshow.
 
 ## Run locally
 ```bash
@@ -18,5 +9,6 @@ streamlit run app.py
 ```
 
 ## Deploy on Streamlit Cloud
-- Upload the unzipped folder contents to GitHub
-- Set the app entrypoint to `app.py`
+Upload the full folder contents to GitHub, then deploy `app.py` from Streamlit Cloud.
+
+Note: this is a public-demo mockup. Keep raw artwork and high-resolution print files private.
