@@ -393,7 +393,7 @@ st.markdown(
 # Header / Footer
 # -----------------------------
 def render_header(active_page: str):
-    st.markdown('<div class="top-strip">✦ Free UK shipping on all orders over £70 ✦ Limited demo drop live now ✦</div>', unsafe_allow_html=True)
+    st.markdown('<div class="top-strip">✦ Free UK shipping on all orders over £70 ✦ Limited drops, once it’s gone it’s gone ✦</div>', unsafe_allow_html=True)
     st.markdown(
         f"""
         <div class="site-header">
@@ -483,20 +483,20 @@ def product_grid(products: List[Dict], columns: int = 4, key_prefix: str = "grid
 # Pages
 # -----------------------------
 def home_page():
-    hero = image_data_uri("tokyo-nights-hoodie-cream.webp")
+    hero = image_data_uri("royal-bloom-hoodie-black.webp")
     st.markdown(
         f"""
         <section class="hero">
             <div>
-                <div class="eyebrow">Original drops • UK streetwear • Artist led</div>
+                <div class="eyebrow">Art • Culture • Streetwear</div>
                 <h1>Wear<br>Your Story<span>.</span></h1>
-                <p>BIPZILLA is a clothing brand built around original art, bold graphics and clean limited pieces. Hoodies, tees and sweatshirts made to look like proper streetwear, not just artwork on a page.</p>
+                <p>BIPZILLA is a streetwear brand built on original art, bold ideas and self-expression. Limited drops. No restocks. This demo uses realistic clothing mockups so it feels like a proper ecommerce site.</p>
                 <div class="button-row">
                     <a class="primary-btn" href="?page=Shop">Shop the drop →</a>
-                    <a class="secondary-btn" href="?page=Lookbook">View lookbook</a>
+                    <a class="secondary-btn" href="?page=About">About BIPZILLA</a>
                 </div>
                 <div class="pill-row">
-                    <span class="pill">Limited drops</span><span class="pill">Real clothing mockups</span><span class="pill">Print + embroidery</span>
+                    <span class="pill">Limited drops</span><span class="pill">Real clothing mockups</span><span class="pill">Print + embroidery</span><span class="pill">UK concept brand</span>
                 </div>
             </div>
             <div class="hero-art">
@@ -525,14 +525,18 @@ def home_page():
         unsafe_allow_html=True,
     )
     featured = [
-        find_product("kraken-warlord-sweatshirt-black"),
-        find_product("samurai-fish-tee-black"),
+        find_product("royal-bloom-tee-white"),
+        find_product("samurai-riot-tee-cream"),
         find_product("royal-bloom-hoodie-black"),
         find_product("tokyo-nights-hoodie-cream"),
+        find_product("ocean-drift-hoodie-navy"),
+        find_product("koi-legend-sweatshirt-cream"),
+        find_product("midnight-slice-sweatshirt-pink"),
+        find_product("kraken-warlord-hoodie-black"),
     ]
     product_grid([p for p in featured if p], columns=4, key_prefix="home_featured")
 
-    story_img = image_data_uri("ocean-drift-hoodie-navy.webp")
+    story_img = image_data_uri("kraken-warlord-hoodie-black.webp")
     st.markdown(
         f"""
         <div class="story-block">
@@ -541,7 +545,7 @@ def home_page():
             <div class="ghost-kanji">夢</div>
             <div class="eyebrow">Our Story</div>
             <h2>More than clothes.<br>It’s a movement.</h2>
-            <p>BIPZILLA mixes your own watercolour artwork, Japanese-inspired typography and streetwear silhouettes. The idea is simple: make wearable art that feels bold, limited and personal.</p>
+            <p>BIPZILLA mixes original watercolour artwork, Japanese-inspired typography, dark graphic drops and clean embroidered pieces. The aim is simple: wearable art that feels bold, limited and personal.</p>
             <a class="secondary-btn" href="?page=About">Read our story →</a>
           </div>
         </div>
@@ -600,7 +604,7 @@ def shop_page(new_only: bool = False):
         <div class="page-title">
             <div class="eyebrow">BIPZILLA Store</div>
             <h1>{title}<span style="color:#ef2f67;">.</span></h1>
-            <p>Browse the demo drop. Filter by tees, hoodies and sweatshirts. Prices are fake UK demo prices so you can preview how the store will feel before selling.</p>
+            <p>Browse the demo drop with realistic product images, UK dummy prices, working filters, product pages and a demo cart. It is built for Streamlit Cloud/GitHub previewing.</p>
         </div>
         """,
         unsafe_allow_html=True,
