@@ -19,3 +19,6 @@ This is a single-file Streamlit demo website for the BIPZILLA clothing brand.
 - All pages open inside the same Streamlit app using query parameters.
 
 Payments and email sending are demo-only and not live.
+
+
+Update: internal navigation links now use target="_self" so pages open in the same Streamlit tab/page.

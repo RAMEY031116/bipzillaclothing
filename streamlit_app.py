@@ -1,8 +1,10 @@
+
 import base64
 from pathlib import Path
 import streamlit as st
 
 st.set_page_config(page_title="BIPZILLA — Art Culture Streetwear", page_icon="⚡", layout="wide", initial_sidebar_state="collapsed")
+# v12 same-page navigation fix: all internal links use target="_self" so Streamlit stays in the same tab/page.
 
 BASE_DIR = Path(__file__).parent
 ASSET_DIR = BASE_DIR / "assets"
@@ -26,8 +28,13 @@ def img64(filename: str) -> str:
 
 
 def qp_get(name: str, default: str = "") -> str:
-    """Fetches query parameters using modern Streamlit native API."""
-    return st.query_params.get(name, default)
+    try:
+        val = st.query_params.get(name, default)
+    except Exception:
+        val = default
+    if isinstance(val, list):
+        return val[0] if val else default
+    return val or default
 
 
 def money(v: float) -> str:
@@ -165,15 +172,15 @@ hr{border:0; border-top:1px solid #eee; margin:34px 0;}
 
 def header(active):
     logo = img64("bipzilla_logo.png")
-    nav_links = "".join([f'<a class="{"active" if key==active else ""}" href="?page={key}">{label}</a>' for key,label in NAV])
+    nav_links = "".join([f'<a class="{"active" if key==active else ""}" target="_self" href="?page={key}">{label}</a>' for key,label in NAV])
     count = cart_count()
     st.markdown(f'''
 <div class="bz-topbar">FREE UK SHIPPING ON ALL ORDERS OVER £70 <span>•</span> LIMITED DEMO STORE</div>
 <div class="bz-header">
   <div class="bz-navwrap">
-    <a href="?page=home"><img class="bz-logo" src="{logo}" alt="BIPZILLA logo"></a>
+    <a target="_self" href="?page=home"><img class="bz-logo" src="{logo}" alt="BIPZILLA logo"></a>
     <nav class="bz-nav">{nav_links}</nav>
-    <div class="bz-actions"><span>⌕</span><a class="bz-cart" href="?page=cart">🛒<span>{count}</span></a></div>
+    <div class="bz-actions"><span>⌕</span><a class="bz-cart" target="_self" href="?page=cart">🛒<span>{count}</span></a></div>
   </div>
 </div>
 ''', unsafe_allow_html=True)
@@ -185,8 +192,8 @@ def footer():
 <div class="bz-footer">
   <div class="footer-inner">
     <div><img class="footer-logo" src="{logo}" alt="BIPZILLA"><p style="color:#aaa;font-size:12px;max-width:260px;line-height:1.6;margin-top:18px;">Art-led streetwear demo store built for T-shirts, hoodies and sweatshirts. Limited drops. No generic blanks.</p></div>
-    <div class="footer-col"><b>SHOP</b><a href="?page=shop">All Products</a><a href="?page=shop&category=T-Shirts">T-Shirts</a><a href="?page=shop&category=Hoodies">Hoodies</a><a href="?page=shop&category=Sweatshirts">Sweatshirts</a></div>
-    <div class="footer-col"><b>INFO</b><a href="?page=about">About Us</a><a href="?page=lookbook">Lookbook</a><a href="?page=contact">Contact</a><a>Size Guide</a></div>
+    <div class="footer-col"><b>SHOP</b><a target="_self" href="?page=shop">All Products</a><a target="_self" href="?page=shop&category=T-Shirts">T-Shirts</a><a target="_self" href="?page=shop&category=Hoodies">Hoodies</a><a target="_self" href="?page=shop&category=Sweatshirts">Sweatshirts</a></div>
+    <div class="footer-col"><b>INFO</b><a target="_self" href="?page=about">About Us</a><a target="_self" href="?page=lookbook">Lookbook</a><a target="_self" href="?page=contact">Contact</a><a>Size Guide</a></div>
     <div class="footer-col"><b>SUPPORT</b><a>Shipping</a><a>Returns</a><a>Track Order</a><a>Privacy Policy</a></div>
     <div class="footer-col"><b>FOLLOW</b><a>Instagram</a><a>TikTok</a><a>Email</a><p style="color:#ee2d67;font-weight:900;letter-spacing:1px;">ART • CULTURE • STREETWEAR</p></div>
   </div>
@@ -199,7 +206,7 @@ def product_card(product, idx):
     im = img64(product["image"] + ".jpg")
     st.markdown(f'''
 <div class="product-card">
-  <a href="?page=product&sku={product['sku']}" class="product-img-wrap">
+  <a target="_self" href="?page=product&sku={product['sku']}" class="product-img-wrap">
     <img class="product-img" src="{im}" alt="{product['name']}">
     <span class="badge">{product['badge']}</span>
   </a>
@@ -207,7 +214,7 @@ def product_card(product, idx):
   <div class="product-price">{money(product['price'])}</div>
   <div class="swatches"><span class="swatch" style="background:{swatch_colour(product['colour'])}"></span><span style="font-size:12px;color:#555;">{product['colour']}</span></div>
   <div class="product-meta">{product['finish']}</div>
-  <a class="mini-link" style="margin-top:12px;padding:10px 12px;font-size:11px;" href="?page=product&sku={product['sku']}">View Product →</a>
+  <a class="mini-link" style="margin-top:12px;padding:10px 12px;font-size:11px;" target="_self" href="?page=product&sku={product['sku']}">View Product →</a>
 </div>
 ''', unsafe_allow_html=True)
     if st.button("Add to cart", key=f"add_{product['sku']}_{idx}"):
@@ -251,25 +258,25 @@ def home():
     <div class="kicker">ART • CULTURE • STREETWEAR</div>
     <div class="hero-title">WEAR<br>YOUR STORY<b>.</b></div>
     <p class="hero-p">BIPZILLA is a streetwear brand built on original artwork, bold ideas and self-expression. T-shirts, hoodies and sweatshirts made for limited drops.</p>
-    <div class="hero-buttons"><a class="btn-main" href="?page=shop">SHOP THE DROP →</a><a class="btn-outline" href="?page=about">ABOUT BIPZILLA</a></div>
+    <div class="hero-buttons"><a class="btn-main" target="_self" href="?page=shop">SHOP THE DROP →</a><a class="btn-outline" target="_self" href="?page=about">ABOUT BIPZILLA</a></div>
   </div>
   <div class="hero-art"><img class="hero-image" src="{hero}" alt="BIPZILLA hoodie streetwear hero"><img class="hero-logo-floating" src="{logo}" alt="BIPZILLA"></div>
 </section>
 ''', unsafe_allow_html=True)
     benefits()
     st.markdown('<div class="bz-page">', unsafe_allow_html=True)
-    st.markdown('<div class="section-head"><div><div class="section-kicker">Featured</div><div class="section-title">LATEST DROPS</div></div><a class="view-all" href="?page=shop">VIEW ALL →</a></div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-head"><div><div class="section-kicker">Featured</div><div class="section-title">LATEST DROPS</div></div><a class="view-all" target="_self" href="?page=shop">VIEW ALL →</a></div>', unsafe_allow_html=True)
     featured_skus = ['royal-bloom-hoodie','samurai-riot-tee','kraken-warlord-hoodie','tokyo-nights-hoodie']
     render_grid([get_product(x) for x in featured_skus if get_product(x)], 4)
     story_img = img64("tokyo_nights_hoodie.jpg")
     st.markdown(f'''
 <div class="story-band">
   <img class="story-img" src="{story_img}" alt="BIPZILLA Tokyo Nights hoodie">
-  <div class="story-copy"><div class="section-kicker">Our story</div><h2>MORE THAN CLOTHES.<br>IT’S A MOVEMENT.</h2><p>BIPZILLA starts from your original artwork and turns it into wearable drops. Some pieces are loud full-back prints, others are minimal chest embroidery style designs. The brand should feel artistic, collectable and street-ready.</p><a class="btn-outline" href="?page=lookbook">OPEN LOOKBOOK →</a></div>
+  <div class="story-copy"><div class="section-kicker">Our story</div><h2>MORE THAN CLOTHES.<br>IT’S A MOVEMENT.</h2><p>BIPZILLA starts from your original artwork and turns it into wearable drops. Some pieces are loud full-back prints, others are minimal chest embroidery style designs. The brand should feel artistic, collectable and street-ready.</p><a class="btn-outline" target="_self" href="?page=lookbook">OPEN LOOKBOOK →</a></div>
 </div>
 ''', unsafe_allow_html=True)
     st.markdown('''
-<div class="newsletter"><div><div class="section-kicker">Join the movement</div><h3>BE THE FIRST TO KNOW.</h3><p class="page-sub">Early access to drops, exclusive offers and new design previews.</p></div><div class="form-row"><div class="fake-input">Enter your email address</div><a class="btn-main" href="?page=contact">SUBSCRIBE</a></div></div>
+<div class="newsletter"><div><div class="section-kicker">Join the movement</div><h3>BE THE FIRST TO KNOW.</h3><p class="page-sub">Early access to drops, exclusive offers and new design previews.</p></div><div class="form-row"><div class="fake-input">Enter your email address</div><a class="btn-main" target="_self" href="?page=contact">SUBSCRIBE</a></div></div>
 ''', unsafe_allow_html=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
@@ -354,7 +361,7 @@ def contact():
 def product_detail(sku):
     product = get_product(sku) or PRODUCTS[0]
     st.markdown('<div class="bz-page">', unsafe_allow_html=True)
-    st.markdown('<a class="view-all" href="?page=shop">← BACK TO SHOP</a>', unsafe_allow_html=True)
+    st.markdown('<a class="view-all" target="_self" href="?page=shop">← BACK TO SHOP</a>', unsafe_allow_html=True)
     im = img64(product['image']+'.jpg')
     st.markdown('<div class="product-detail">', unsafe_allow_html=True)
     l,r = st.columns([1.05,.95], gap='large')
@@ -386,7 +393,7 @@ def cart():
     cart = st.session_state.setdefault('cart', {})
     if not cart:
         st.info('Your cart is empty. Add a hoodie, tee or sweatshirt from the shop.')
-        st.markdown('<a class="btn-main" href="?page=shop">SHOP THE DROP →</a>', unsafe_allow_html=True)
+        st.markdown('<a class="btn-main" target="_self" href="?page=shop">SHOP THE DROP →</a>', unsafe_allow_html=True)
         st.markdown('</div>', unsafe_allow_html=True)
         return
     total = 0
