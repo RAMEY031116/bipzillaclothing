@@ -194,10 +194,10 @@ def home():
   <div class="hero-copy">
     <div class="eyebrow">ART • CULTURE • STREETWEAR</div>
     <h1 class="headline">WEAR<br>YOUR STORY<span>.</span></h1>
-    <p>BIPZILLA is a clothing brand built on original art, bold graphics and limited streetwear drops. T-shirts, hoodies and sweatshirts designed as real products, not just art on a blank page.</p>
+    <p>BIPZILLA is a streetwear clothing brand built around custom graphics, Japanese-English typography, logo details and wearable statement pieces. The collection mixes heavy print drops with cleaner embroidery essentials.</p>
     <div class="btn-row"><a class="btn-pink" href="{nav_url('Shop')}">Shop the drop →</a><a class="btn-outline" href="{nav_url('About')}">About BIPZILLA</a></div>
   </div>
-  <div class="hero-art" style="background-image:url('{image_src('assets/hero_hoodie.jpg')}');"><div class="jp-vertical">ビップジラ</div></div>
+  <div class="hero-art" style="background-image:url('{image_src('assets/products/tokyo_nights_hoodie.jpg')}');background-size:contain;background-repeat:no-repeat;background-position:center center;background-color:#f7f7f7;"><div class="jp-vertical">ビップジラ</div></div>
 </section>
 <section class="trust">
   <div class="trust-card"><div class="trust-icon">◎</div><div><b>Worldwide Shipping</b><span>Demo delivery options</span></div></div>
@@ -217,7 +217,7 @@ def home():
     <div class="story-copy">
       <div class="small-label">Our story</div>
       <h2>MORE THAN CLOTHES.<br>IT'S A MOVEMENT.</h2>
-      <p>BIPZILLA takes sketchbook energy and turns it into wearable streetwear. Big print pieces carry the artwork, while cleaner logo pieces can become embroidery ideas.</p>
+      <p>BIPZILLA is positioned as a proper streetwear brand first: bold hoodies, graphic tees, cleaner stitched essentials and a tighter collection with better colour variation. The source art stays protected, while the website shows only finished product and campaign visuals.</p>
       <a class="btn-outline" href="{nav_url('About')}">Read our story →</a>
       <div class="big-kanji">夢</div><div class="brand-stamp">BIP</div>
     </div>
@@ -234,7 +234,7 @@ def shop(new_only=False):
     title = "New In" if new_only else "Shop the Drop"
     st.markdown(f'''
 <div class="page-pad"><div class="small-label">BIPZILLA Store</div><div class="section-title">{title}</div>
-<p class="page-intro">A proper clothing-brand ecommerce demo with realistic garment mockups, GBP prices, product pages, filters, a working demo cart and a contact form. No real payment is connected.</p></div>
+<p class="page-intro">A proper clothing-brand ecommerce demo with realistic garment mockups, pink and dark themes, embroidery pieces, Japanese-English graphic styles, product pages, filters, a working demo cart and a contact form. No real payment is connected.</p></div>
 ''', unsafe_allow_html=True)
     st.markdown('<div class="container">', unsafe_allow_html=True)
     with st.container():
@@ -256,8 +256,7 @@ def product_page():
     left, right = st.columns([1.08, .92], gap="large")
     with left:
         st.markdown(f'<div class="detail-img"><img src="{image_src(p["image"])}" alt="{p["name"]}"></div>', unsafe_allow_html=True)
-        with st.expander("View the original artwork used for this piece"):
-            st.image(str(ROOT / p["art"]), use_container_width=True)
+        st.caption('Product mockup preview only - the source design files are kept private.')
     with right:
         st.markdown(f'''
 <div class="detail">
@@ -277,13 +276,25 @@ def product_page():
     st.markdown('</div>', unsafe_allow_html=True)
 
 def lookbook():
-    st.markdown('''<div class="page-pad"><div class="small-label">Artwork Archive</div><div class="section-title">Lookbook</div><p class="page-intro">This page keeps the art visible, but the site still feels like a clothing brand first. Use this for Instagram-style storytelling and drop previews.</p></div>''', unsafe_allow_html=True)
-    art_files = ["samurai.jpg","ocean.jpg","warrior_colour.jpg","warrior_bw.jpg","pizza.jpg","abstract.jpg","cow.jpg","guitar.jpg","lamp_clock.jpg","postbox.jpg","city_night.jpg","card_black.jpg","card_white.jpg"]
+    st.markdown('''<div class="page-pad"><div class="small-label">Campaign</div><div class="section-title">Lookbook</div><p class="page-intro">Editorial product visuals only - no raw source art files. Use this page to sell the brand mood: streetwear, colour, typography, texture and finished garments.</p></div>''', unsafe_allow_html=True)
+    visual_paths = [
+        'assets/lookbook/neon_alley_editorial.png',
+        'assets/products/tokyo_nights_hoodie.jpg',
+        'assets/products/armoured_warlord_hoodie.jpg',
+        'assets/products/bipzilla_script_embroidery_hoodie.jpg',
+        'assets/products/samurai_riot_tee.jpg',
+        'assets/products/navy_stitch_sweatshirt.jpg',
+        'assets/lookbook/streetwear_graphics.png',
+        'assets/products/night_script_tee.jpg',
+        'assets/lookbook/bold_graphic_prints.png',
+        'assets/products/ocean_drift_hoodie.jpg',
+        'assets/lookbook/tees_editorial.png',
+        'assets/products/penguin_drift_sweatshirt.jpg',
+    ]
     html = '<div class="page-pad"><div class="gallery">'
-    for f in art_files:
-        path = f"assets/art/{f}"
+    for path in visual_paths:
         if (ROOT / path).exists():
-            html += f'<img src="{image_src(path)}" alt="BIPZILLA artwork">'
+            html += f'<img src="{image_src(path)}" alt="BIPZILLA lookbook visual">'
     html += '</div></div>'
     st.markdown(html, unsafe_allow_html=True)
 
@@ -291,11 +302,11 @@ def about():
     st.markdown('''
 <div class="page-pad">
   <div class="small-label">About</div><div class="section-title">BIPZILLA is a clothing brand.</div>
-  <p class="page-intro">This demo is set up as a proper clothing-brand ecommerce site: a strong homepage, product grid, product pages, lookbook, contact page and a working demo cart, pink/dark theme switch, realistic clothing mockups and embroidery-style items. The artwork is the identity, but the website sells clothes first.</p>
+  <p class="page-intro">This demo is set up as a proper clothing-brand ecommerce site: a strong homepage, product grid, product pages, campaign lookbook, contact page and a working demo cart. It uses realistic clothing mockups, custom in-house graphics, embroidery-style items and a pink/dark theme switch. The website shows the finished collection, not the raw source art.</p>
   <div class="brand-grid">
     <div class="brand-card"><h3>01. Limited</h3><p class="muted">Start with a small collection. A tight drop looks stronger than too many random products.</p></div>
-    <div class="brand-card"><h3>02. Wearable</h3><p class="muted">Use large back prints for statement hoodies and simple chest-logo pieces for embroidery ideas. No generic crown mark is used; the identity is the BIPZILLA wordmark and Japanese-style typography.</p></div>
-    <div class="brand-card"><h3>03. Original</h3><p class="muted">Keep your uploaded artwork recognisable. The mockups show the art printed on real-looking garments.</p></div>
+    <div class="brand-card"><h3>02. Wearable</h3><p class="muted">Use large back prints for statement hoodies, graphic tees for anime/street energy and clean chest-logo pieces for embroidery. The identity is the BIPZILLA wordmark, colour blocking and Japanese-style typography.</p></div>
+    <div class="brand-card"><h3>03. Protected</h3><p class="muted">Keep source artwork private. The public site shows only finished garments, branded product mockups and editorial campaign visuals.</p></div>
   </div>
 </div>
 ''', unsafe_allow_html=True)
